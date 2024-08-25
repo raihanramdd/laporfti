@@ -144,9 +144,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="row mt-5">
-            <div class="col-lg-8">
+        <br>
+        <!-- IQBAL WAS HERE -->
+        <div>
                 <a class="d-inline tab {{ $siapa != 'me' ? 'tab-active' : ''}} mr-4" href="{{ route('pekat.laporan') }}">
                     Semua
                 </a>
@@ -154,14 +154,15 @@
                     Laporan Saya
                 </a>
                 <hr>
-            </div>
+        </div>
+        <div class="row">
             @foreach ($pengaduan as $k => $v)
-            <div class="w3-container-fluid">
+            <div class="col-4 mt-2 w3-container-fluid">
                 <div class="w3-card-4">
                     <header class="w3-container w3-light-grey">
                         <h3>{{ $siapa == 'me' ? $v->masyarakat->nama : 'Anonymous' }}</h3>
                     </header>
-                    <div class="w3-container">
+                    <div class="w3-container ">
                         <p>@if ($v->status == '0')
                             <p class="text-danger">Pending</p>
                         @elseif($v->status == 'proses')
@@ -171,6 +172,7 @@
                         @endif
                         <p>Kategori Laporan: {{ $v->kategori->nama_kategori }}</p>
                         </p>
+                        <p>Isi Laporan: {{ $v->isi_laporan }}</p>
                         <hr>
 
                         @if ($v->foto)
@@ -182,8 +184,6 @@
                                 @endforeach
                             </div>
                         @endif
-
-                        <p>{{ $v->isi_laporan }}</p>
                         <br>
                     </div>
                 </div>
@@ -205,6 +205,7 @@
             @endif
             @endforeach
         </div>
+        <!-- IQBAL WAS HERE -->
     </div>
 </div>
 @endsection
