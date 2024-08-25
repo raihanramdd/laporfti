@@ -17,16 +17,26 @@
 .foto-item {
     flex: 1 1 auto; /* Memungkinkan foto untuk mengisi ruang yang tersedia */
     max-width: 200px; /* Atur lebar maksimum foto */
+    height: 100px; /* Sets a consistent height for all images */
+    overflow: hidden; /* Ensures images fit within the container */
 }
 
 .foto-item img {
     width: 100%; /* Memastikan gambar mengisi lebar wadahnya */
-    height: auto; /* Menjaga rasio aspek gambar */
+    height: 100%; /* Menjaga rasio aspek gambar */
     border-radius: 5px; /* Opsional: Menambahkan sudut melengkung pada gambar */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opsional: Menambahkan bayangan pada gambar */
+    object-fit: cover; /* Ensures images cover the entire container while maintaining aspect ratio */
 }
 
-
+.w3-card-4 {
+    height: 100%; /* Ensure the card fills its allocated height */
+    display: flex;
+    flex-direction: column; /* Aligns content vertically */
+    justify-content: space-between; /* Ensures the header, content, and footer are spaced evenly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow to cards */
+    border-radius: 5px; /* Optional: Adds rounded corners to cards */
+}
 
 
 
